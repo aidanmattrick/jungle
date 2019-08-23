@@ -3,6 +3,8 @@ Rails.application.routes.draw do
   root to: 'products#index' # matches /
   # root to: redirect('/products')
 
+  get 'about', to: 'about#show'
+
   resources :products, only: [:index, :show]
   resources :categories, only: [:show]
 
