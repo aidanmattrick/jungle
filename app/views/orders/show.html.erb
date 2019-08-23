@@ -2,11 +2,14 @@
 
   <header class="page-header">
     <h1>Order #<%= @order.id %></h1>
+    <h3>Order Email: <%= @order.email %></h1>
   </header>
 
   <div class="order-summary jumbotron">
     <h4>Thank you for your order!</h4>
   </div>
+
+  <%= render 'carts/cart', products: @products, total: @order.total_cents, ordered: true %> 
 
   <%= link_to "Continue Shopping", root_path, class: 'btn btn-lg btn-primary' %>
 
