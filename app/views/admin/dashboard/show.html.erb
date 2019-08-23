@@ -1,2 +1,3 @@
-<h1>Admin::Dashboard#show</h1>
-<p>Find me in app/views/admin/dashboard/show.html.erb</p>
+<h1>Admin Dashboard</h1>
+<p>There are <%= link_to pluralize(@product_count, 'product'), admin_products_path %></p>
+<p>There are <%= pluralize(@category_count, 'category') %></p>
