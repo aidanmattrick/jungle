@@ -1,6 +1,6 @@
 class Order < ActiveRecord::Base
 
-  belongs_to :user
+  belongs_to :user, optional: true
   has_many :line_items
 
   monetize :total_cents, numericality: true

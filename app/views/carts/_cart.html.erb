@@ -1,0 +1,36 @@
+<div class="panel panel-default items">
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th colspan="2">Product</th>
+          <th>Unit Price</th>
+          <th>Quantity</th>
+          <th>Price</th>
+        </tr>
+      </thead>
+      <tbody>
+      <% if products.empty? %>
+       <tr>
+        <td colspan="5">
+          It's empty loserrrr <%= link_to 'Check out our product selection', root_path %>
+        </td>
+       </tr>
+      </tbody>
+      <% else %>
+        <% products.each do |item| %>
+          <%= render 'carts/item', product: item[:product], quantity: item[:quantity].to_i, ordered: ordered %>
+        <% end %>
+      </tbody>
+      <tfoot>
+        <tr>
+          <th colspan="4">
+            TOTAL:
+          </th>
+          <th>
+            <%= humanized_money_with_symbol total / 100.0 %>
+          </th>
+        </tr>
+      </tfoot>
+      <% end %>
+    </table>
+  </div>
