@@ -1,0 +1,6 @@
+<%= simple_form_for(session, url: session_path) do |f| %>
+  <%= f.error_notification %>
+  <%= f.input :email, placeholder: 'john@doe.com' %>
+  <%= f.input :password, required: true %>
+  <%= f.button :submit %>
+<% end %>

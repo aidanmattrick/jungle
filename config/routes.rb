@@ -2,6 +2,8 @@ Rails.application.routes.draw do
 
   root to: 'products#index' # matches /
   # root to: redirect('/products')
+  resource :user, only: [:new, :create] 
+  resource :session, only: [:new, :create, :destroy] 
 
   get 'about', to: 'about#show'
 

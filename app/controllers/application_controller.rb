@@ -6,6 +6,17 @@ class ApplicationController < ActionController::Base
 
   private
 
+  def current_user
+    return @current_user if defined?(@current_user)
+    @current_user = session[:user_id] ? User.find(session[:user_id]) : nil
+  end
+  helper_method :current_user
+
+  def logged_in?
+    !!current_user
+  end
+  helper_method :logged_in?
+
   def cart
     @cart ||= cookies[:cart].present? ? JSON.parse(cookies[:cart]) : {}
   end

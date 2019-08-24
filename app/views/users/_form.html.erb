@@ -1,0 +1,9 @@
+<%= simple_form_for(user, url: user_path) do |f| %>
+  <%= f.error_notification %>
+  <%= f.input :email, placeholder: 'john@doe.com' %>
+  <%= f.input :password, required: true %>
+  <%= f.input :password_confirmation, hint: "Enter your password again to confirm", required: true %>
+  <%= f.input :first_name %>
+  <%= f.input :last_name %>
+  <%= f.button :submit %>
+<% end %>
